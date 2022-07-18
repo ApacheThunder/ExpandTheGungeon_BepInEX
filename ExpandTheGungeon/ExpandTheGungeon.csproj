@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{879A1D67-4A5C-4A21-9823-426D1752D3D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpandTheGungeon</RootNamespace>
+    <AssemblyName>ExpandTheGungeon</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\Dependencies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\Dependencies\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\Dependencies\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\Dependencies\BepInEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Dependencies\Ionic.Zip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ModTheGungeonAPI">
+      <HintPath>..\Dependencies\ModTheGungeonAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\Dependencies\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\Dependencies\MonoMod.RuntimeDetour.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\Dependencies\MonoMod.Utils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PlayMaker">
+      <HintPath>..\Dependencies\PlayMaker.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\Dependencies\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\Dependencies\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule.Base.mm">
+      <HintPath>..\Dependencies\UnityEngine.CoreModule.Base.mm.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\Dependencies\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\Dependencies\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\Dependencies\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\Dependencies\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\Dependencies\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\Dependencies\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExpandComponents\ExpandBalloonController.cs" />
+    <Compile Include="ExpandComponents\ExpandCasinoGameController.cs" />
+    <Compile Include="ExpandComponents\ExpandCasinoPropAnimationHandler.cs" />
+    <Compile Include="ExpandComponents\ExpandCasinoWarpTrigger.cs" />
+    <Compile Include="ExpandComponents\ExpandClownKinBalloonManager.cs" />
+    <Compile Include="ExpandComponents\ExpandInteractableDoor.cs" />
+    <Compile Include="ExpandComponents\ExpandInteractableLock.cs" />
+    <Compile Include="ExpandComponents\ExpandNewElevatorController.cs" />
+    <Compile Include="ExpandComponents\ExpandPunchoutArcadeController.cs" />
+    <Compile Include="ExpandComponents\ExpandRandomVarGenerator.cs" />
+    <Compile Include="ExpandComponents\ExpandReticleRiserEffect.cs" />
+    <Compile Include="ExpandComponents\ExpandSpawnBowlerNoteOnDeath.cs" />
+    <Compile Include="ExpandComponents\ExpandTK2DDungeonAssembler.cs" />
+    <Compile Include="ExpandComponents\ExpandChargeBehavior.cs" />
+    <Compile Include="ExpandComponents\ExpandCompanionManager.cs" />
+    <Compile Include="ExpandComponents\ExpandDashBehavior.cs" />
+    <Compile Include="ExpandComponents\ExpandHideGunHandsOnDeath.cs" />
+    <Compile Include="ExpandComponents\ExpandParadropController.cs" />
+    <Compile Include="ExpandComponents\ExpandTallGrassPatchSystem.cs" />
+    <Compile Include="ExpandComponents\ExpandWesternBroSeekTargetBehavior.cs" />
+    <Compile Include="ExpandComponents\ExpandWesternBroController.cs" />
+    <Compile Include="ExpandComponents\ExpandBabyDragunComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandBellyMonsterController.cs" />
+    <Compile Include="ExpandComponents\ExpandWarpManager.cs" />
+    <Compile Include="ExpandComponents\ExpandBellyWoodCrestEntranceController.cs" />
+    <Compile Include="ExpandComponents\ExpandBlobulinRancherChallengeComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandBooChallengeComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandBulletKingChallengeComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandCandleGuyEngageDoer.cs" />
+    <Compile Include="ExpandComponents\ExpandChamberGunProcessor.cs" />
+    <Compile Include="ExpandComponents\ExpandChaosModeChallengeComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandCorruptedEnemyEngageDoer.cs" />
+    <Compile Include="ExpandComponents\ExpandCorruptedObjectAmbienceComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandEnableCorpseOnDeath.cs" />
+    <Compile Include="ExpandComponents\ExpandEnableSpacePitOnEnterComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandGlitchedEnemyStunManager.cs" />
+    <Compile Include="ExpandComponents\ExpandGlitchPortalController.cs" />
+    <Compile Include="ExpandComponents\ExpandScreenFXController.cs" />
+    <Compile Include="ExpandComponents\ExpandGungeoneerMimicIntroDoer.cs" />
+    <Compile Include="ExpandComponents\ExpandGungeoneerMimicBossController.cs" />
+    <Compile Include="ExpandComponents\ExpandGungeoneerMimicDeathController.cs" />
+    <Compile Include="ExpandComponents\ExpandJungleExitLadderComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandJungleTreeStumpItemPedestal.cs" />
+    <Compile Include="ExpandComponents\ExpandMaybeLoseAmmoOnDamage.cs" />
+    <Compile Include="ExpandComponents\ExpandNoteDoer.cs" />
+    <Compile Include="ExpandComponents\ExpandParasiteBossDeathController.cs" />
+    <Compile Include="ExpandComponents\ExpandParasiteBossPortalBehavior.cs" />
+    <Compile Include="ExpandComponents\ExpandRemoveGunOnAmmoDepletion.cs" />
+    <Compile Include="ExpandComponents\ExpandRewardPedestal.cs" />
+    <Compile Include="ExpandComponents\ExpandFakeChest.cs" />
+    <Compile Include="ExpandComponents\ExpandScarfComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandSimpleMoveErraticallyBehavior.cs" />
+    <Compile Include="ExpandComponents\ExpandJungleTreeController.cs" />
+    <Compile Include="ExpandComponents\ExpandTossSpriteOnDeath.cs" />
+    <Compile Include="ExpandComponents\ExpandWallMimicManager.cs" />
+    <Compile Include="ExpandComponents\ExpandWesternBroDeathController.cs" />
+    <Compile Include="ExpandComponents\ExpandWesternBroIntroDoer.cs" />
+    <Compile Include="ExpandComponents\ExpandWestPuzzleRoomController.cs" />
+    <Compile Include="ExpandComponents\ExpandCasinoRoomController.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\apache_fucking_around_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\f0b_office_flows.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\f0b_phobos_flows.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\f1b_jungle_flow_01.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\f1b_jungle_flow_02.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\f2b_belly_flow_01.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\f4c_west_flow_01.cs" />
+    <Compile Include="ExpandFoyer.cs" />
+    <Compile Include="ExpandMain\ExpandDungeonDoorManager.cs" />
+    <Compile Include="ExpandMain\ExpandDungeonMusicAPI.cs" />
+    <Compile Include="ExpandMain\ExpandFloorDecorator.cs" />
+    <Compile Include="ExpandMain\ExpandStaticReferenceManager.cs" />
+    <Compile Include="ExpandMain\ExpandSynergies.cs" />
+    <Compile Include="ExpandPrefab\ExpandAlarmMushroomPlacable.cs" />
+    <Compile Include="ExpandPrefab\ExpandBootlegRoomPlaceable.cs" />
+    <Compile Include="ExpandPrefab\ExpandCustomEnemyDatabase.cs" />
+    <Compile Include="ExpandPrefab\ExpandCustomDungeonPrefabs.cs" />
+    <Compile Include="ExpandPrefab\ExpandDungeonCollections.cs" />
+    <Compile Include="ExpandPrefab\ExpandGungeoneerMimicBossPlacable.cs" />
+    <Compile Include="ExpandPrefab\ExpandMorePrefabs.cs" />
+    <Compile Include="ExpandPrefab\ExpandSawBladeTrapPlaceable.cs" />
+    <Compile Include="ExpandPrefab\ExpandSecretDoorPlacable.cs" />
+    <Compile Include="ExpandPrefab\ExpandWesternBrosPrefabBuilder.cs" />
+    <Compile Include="ExpandUtilities\RoomFactory.cs" />
+    <Compile Include="ItemAPI\Items\ClownBullets.cs" />
+    <Compile Include="ItemAPI\Items\ClownFriend.cs" />
+    <Compile Include="ItemAPI\Items\PortableElevator.cs" />
+    <Compile Include="ItemAPI\Items\PortableShip.cs" />
+    <Compile Include="ItemAPI\Items\SonicBox.cs" />
+    <Compile Include="ItemAPI\Items\BabySitter.cs" />
+    <Compile Include="ItemAPI\Items\BootlegGuns.cs" />
+    <Compile Include="ItemAPI\Items\BulletKinGun.cs" />
+    <Compile Include="ItemAPI\Items\ChronenbergBullets.cs" />
+    <Compile Include="ItemAPI\Items\CorruptedJunk.cs" />
+    <Compile Include="ItemAPI\Items\CursedBrick.cs" />
+    <Compile Include="ItemAPI\Items\CustomMasterRounds.cs" />
+    <Compile Include="ExpandMain\ExpandPayDayDrillItemFixes.cs" />
+    <Compile Include="ItemAPI\Items\ExpandRedScarf.cs" />
+    <Compile Include="ExpandPrefab\ExpandCorruptedRoomAmbiencePlacable.cs" />
+    <Compile Include="ExpandComponents\ExpandElevatorDepartureManager.cs" />
+    <Compile Include="ExpandComponents\ExpandForgeHammerComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandThwompManager.cs" />
+    <Compile Include="ExpandComponents\ExpandGlitchedSuperReaperController.cs" />
+    <Compile Include="ExpandComponents\ExpandTripleTroubleChallengeComponent.cs" />
+    <Compile Include="ExpandComponents\ExpandZoneControlChallengeComponent.cs" />
+    <Compile Include="ExpandMain\ExpandPlaceCorruptTiles.cs" />
+    <Compile Include="ItemAPI\FakePrefab.cs" />
+    <Compile Include="ItemAPI\FakePrefabHooks.cs" />
+    <Compile Include="ItemAPI\ItemBuilder.cs" />
+    <Compile Include="ItemAPI\Items\BabyGoodHammer.cs" />
+    <Compile Include="ItemAPI\Items\CorruptionBomb.cs" />
+    <Compile Include="ItemAPI\AnimateProjectileTools.cs" />
+    <Compile Include="ItemAPI\Items\GoldensRevolvers\BlackAndGoldenRevolver.cs" />
+    <Compile Include="ItemAPI\Items\GoldensRevolvers\CustomHoveringGunSynergyProcessor.cs" />
+    <Compile Include="ItemAPI\Items\GoldensRevolvers\WestBrosRevolverGenerator.cs" />
+    <Compile Include="ItemAPI\Items\HotShotShotGun.cs" />
+    <Compile Include="ItemAPI\Items\PowBlock.cs" />
+    <Compile Include="ItemAPI\Items\RockSlide.cs" />
+    <Compile Include="ItemAPI\Items\TheLeadKey.cs" />
+    <Compile Include="ItemAPI\Items\Mimiclay.cs" />
+    <Compile Include="ItemAPI\Items\TableTechAssassin.cs" />
+    <Compile Include="ItemAPI\Items\SonicRing.cs" />
+    <Compile Include="ItemAPI\Items\ThirdEye.cs" />
+    <Compile Include="ItemAPI\Items\WoodenCrest.cs" />
+    <Compile Include="ItemAPI\SpriteBuilder.cs" />
+    <Compile Include="ExpandMain\ExpandJunkEnemySpawner.cs" />
+    <Compile Include="ExpandUtilities\RoomDebug.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\test_customroom_flow.cs" />
+    <Compile Include="ExpandObjectMods.cs" />
+    <Compile Include="ExpandDungeonFlows\ExpandDungeonFlows.cs" />
+    <Compile Include="ExpandMain\ExpandEnemyReplacements.cs" />
+    <Compile Include="ExpandPrefab\ExpandPrefabs.cs" />
+    <Compile Include="ExpandUtilities\ExpandShaders.cs" />
+    <Compile Include="ExpandComponents\ExpandSpawnGlitchedEnemyOnDeath.cs" />
+    <Compile Include="ExpandComponents\ExpandSpawnGlitchedObjectOnDeath.cs" />
+    <Compile Include="ExpandComponents\ExpandWeatherController.cs" />
+    <Compile Include="ExpandComponents\ExpandExplodeOnDeath.cs" />
+    <Compile Include="ExpandPrefab\ExpandGlitchedEnemies.cs" />
+    <Compile Include="ExpandMain\ExpandPlaceGlitchedEnemies.cs" />
+    <Compile Include="ExpandSettings.cs" />
+    <Compile Include="ExpandPrefab\ExpandLists.cs" />
+    <Compile Include="DungeonFlowModule.cs" />
+    <Compile Include="ExpandTheGungeon.cs" />
+    <Compile Include="ExpandPrefab\ExpandObjectDatabase.cs" />
+    <Compile Include="ExpandComponents\ExpandKickableObject.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\BossrushFlows.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\complex_flow_test.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\custom_glitchchestalt_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\custom_glitchchest_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\custom_glitch_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\demo_stage_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\really_big_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\test_traproom_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\test_west_floor_03a_flow.cs" />
+    <Compile Include="ExpandDungeonFlows\DungeonFlows\fruit_loops.cs" />
+    <Compile Include="ExpandUtilities\FlowHelpers.cs" />
+    <Compile Include="ItemAPI\Tools.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExpandMain\ExpandSharedHooks.cs" />
+    <Compile Include="ExpandUtilities\ExpandUtility.cs" />
+    <Compile Include="ExpandMain\ExpandPlaceWallMimics.cs" />
+    <Compile Include="ExpandUtilities\RoomBuilder.cs" />
+    <Compile Include="ExpandPrefab\ExpandRoomPrefabs.cs" />
+    <Compile Include="ExpandAssets.cs" />
+    <Compile Include="SpriteAPI\SpriteAPI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpandSharedAuto" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\bootleg_machinepistol_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\bootleg_pistol_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\bootleg_shotgun_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\bulletkin_gun_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\gr_angel_rev_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\gr_black_revolver_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\gr_golden_revolver_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\gr_nome_rev_idle_001.png" />
+    <EmbeddedResource Include="Sprites\Ammonomicon Encounter Icon Collection\gr_tuc_rev_idle_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_enemy_pre_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_enemy_pre_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_enemy_pre_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_005.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_006.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_005.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_006.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_enemy_pre_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_enemy_pre_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_enemy_pre_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_enemy_pre_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_enemy_pre_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_enemy_pre_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_004.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_idle_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_001.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_002.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_003.json" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_004.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinegun_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_machinepistol_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_pistol_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bootleg_shotgun_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\bulletkin_gun_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_enemy_pre_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_enemy_pre_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_enemy_pre_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_angel_rev_reload_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_idle_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_005.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_black_revolver_reload_006.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_idle_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_005.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_golden_revolver_reload_006.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_enemy_pre_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_enemy_pre_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_enemy_pre_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_nome_rev_reload_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_enemy_pre_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_enemy_pre_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_enemy_pre_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_fire_004.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_idle_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_001.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_002.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_003.png" />
+    <EmbeddedResource Include="Sprites\WeaponCollection\gr_tuc_rev_reload_004.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
